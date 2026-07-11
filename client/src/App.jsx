@@ -4,11 +4,13 @@ import Home from "./pages/Home.jsx";
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Signout from "./pages/Signout.jsx";
 import Profile from "./pages/Profile.jsx";
+import Header from "./components/Header.jsx";
 
 
 function App() {
   return (
     <BrowserRouter>
+        <Header />
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/signin" element={<Signin />}/>
