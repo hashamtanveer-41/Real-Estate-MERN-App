@@ -26,7 +26,7 @@ const Header = () => {
                     <Link to="/about">
                         <li className="hidden sm:inline text-shadow-slate-700 hover:underline">About</li>
                     </Link>
-                    <Link to="/signin">
+                    <Link to="/sign-in">
                         <li className=" text-shadow-slate-700 hover:underline">Signin</li>
                     </Link>
                 </ul>
