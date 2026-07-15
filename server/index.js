@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import * as dns from "node:dns";
 import userRoutes from "./routes/userRoutes.js";
 import authRoutes from "./routes/authRoute.js";
+import cookieParser from "cookie-parser";
 dotenv.config()
 dns.setDefaultResultOrder('ipv4first');
 
@@ -11,6 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 app.use(express.json())
+app.use(cookieParser())
 
 mongoose.connect(process.env.MONGO_URL)
     .then(()=>{
