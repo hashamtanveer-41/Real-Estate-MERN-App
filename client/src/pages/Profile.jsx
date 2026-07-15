@@ -1,6 +1,12 @@
 import React, {useRef, useState} from 'react'
 import {useDispatch, useSelector} from "react-redux";
-import {updateUserFailure, updateUserStart, updateUserSuccess} from "../store/slices/userSlice.js";
+import {
+    deleteUserFailure,
+    deleteUserStart, deleteUserSuccess,
+    updateUserFailure,
+    updateUserStart,
+    updateUserSuccess
+} from "../store/slices/userSlice.js";
 import {useNavigate} from "react-router-dom";
 
 const Profile = () => {
@@ -36,6 +42,24 @@ const Profile = () => {
             dispatch(updateUserFailure(err.message))
         }
     }
+    
+    const handleDelete = async () => {
+      try{
+            dispatch(deleteUserStart());
+            const res = await fetch(`/api/user/${currentUser._id}`, {
+              method: 'DELETE',
+            });
+            const data = await res.json();
+            if (data.success === false){
+              dispatch(deleteUserFailure(data.message))
+              return;
+            }
+           dispatch(deleteUserSuccess())
+            navigate("/sign-in")
+      }catch (err){
+            dispatch(deleteUserFailure(err.message))
+      }
+    }
 
     return (
         <div className="p-3 max-w-lg mx-auto">
@@ -49,7 +73,7 @@ const Profile = () => {
                 <button disabled={loading} className="bg-slate-700 text-white rounded-lg p-3 uppercase hover:bg-slate-600 disabled:opacity-95">{loading?"Loading...":"Update"}</button>
             </form>
             <div className="flex justify-between mt-3">
-                <span className="text-red-700 cursor-pointer">Delete Account</span>
+                <span className="text-red-700 cursor-pointer" onClick={handleDelete}>Delete Account</span>
                 <span className="text-red-700 cursor-pointer">Sign Out</span>
             </div>
             <p className="text-red-700 mt-5">{error ?error :""}</p>
