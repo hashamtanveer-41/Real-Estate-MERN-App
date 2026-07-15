@@ -5,6 +5,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import SignUp from "./pages/SignUp.jsx";
 import Profile from "./pages/Profile.jsx";
 import Header from "./components/Header.jsx";
+import PrivateRoutes from "./components/PrivateRoutes.jsx";
 
 
 function App() {
@@ -16,7 +17,9 @@ function App() {
         <Route path="/sign-in" element={<Signin />}/>
         <Route path="/sign-up" element={<SignUp />}/>
         <Route path="/about" element={<About />}/>
-        <Route path="/profile" element={<Profile />}/>
+        <Route element={<PrivateRoutes />}>
+            <Route path="/profile" element={<Profile />}/>
+        </Route>
       </Routes>
     </BrowserRouter>
   )
