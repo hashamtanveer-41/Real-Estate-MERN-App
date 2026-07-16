@@ -6,6 +6,7 @@ import userRoutes from "./routes/userRoutes.js";
 import authRoutes from "./routes/authRoute.js";
 import cookieParser from "cookie-parser";
 import listingRoutes from "./routes/listingRoutes.js";
+import uploadRoutes from "./routes/uploadRoutes.js";
 dotenv.config()
 dns.setDefaultResultOrder('ipv4first');
 
@@ -25,6 +26,7 @@ mongoose.connect(process.env.MONGO_URL)
 app.use("/api/user",userRoutes)
 app.use("/api/auth",authRoutes)
 app.use("/api/listing",listingRoutes)
+app.use("/api/upload",uploadRoutes)
 
 app.use((err, req, res, next)=>{
     const statusCode = err.statusCode || 500;

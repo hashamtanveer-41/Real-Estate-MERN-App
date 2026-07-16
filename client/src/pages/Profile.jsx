@@ -7,7 +7,7 @@ import {
     updateUserStart,
     updateUserSuccess
 } from "../store/slices/userSlice.js";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const Profile = () => {
     const {currentUser, error , loading} = useSelector(state=>state.user)
@@ -17,7 +17,6 @@ const Profile = () => {
     const [updateSuccess, setUpdateSuccess] = useState(false);
     const navigate = useNavigate();
     const handleChange = (e) =>{
-        console.log(e.target.id, e.target.value)
         setFormData({...formData, [e.target.id]: e.target.value})
     }
     const handleSubmit= async (e)=>{
@@ -90,6 +89,9 @@ const Profile = () => {
                 <input onChange={handleChange} className="border p-3 rounded-lg bg-gray-200" type="text" id="email" placeholder="email"/>
                 <input onChange={handleChange} className="border p-3 rounded-lg bg-gray-200" type="password" id="password" placeholder="password"/>
                 <button disabled={loading} className="bg-slate-700 text-white rounded-lg p-3 uppercase hover:bg-slate-600 disabled:opacity-95">{loading?"Loading...":"Update"}</button>
+                <Link className="bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95" to="/create-listing">
+                    <button>Create Listing</button>
+                </Link>
             </form>
             <div className="flex justify-between mt-3">
                 <span className="text-red-700 cursor-pointer" onClick={handleDelete}>Delete Account</span>
