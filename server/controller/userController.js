@@ -1,6 +1,7 @@
 import {errorHandler} from "../utils/error.js";
 import bcryptjs from "bcryptjs";
 import User from "../models/userModel.js"
+import Listing from "../models/listingModal.js";
 export const updateUser =async (req, res) => {
     if (req.user.id !== req.params.id) return next(errorHandler(403, "You can update only your account!"));
     try{
@@ -30,5 +31,15 @@ export const deleteUser = async (req, res, next) => {
         res.status(200).json({success: true, message: "User has been deleted successfully!"});
     }catch (err){
         next(err);
+    }
+}
+
+export const getUserlising= async (req, res, next) => {
+    if (req.user.id !== req.params.id) return next(errorHandler(401, "You can get only view your listings!"));
+    try{
+        const listing = await Listing.find({userRef: req.params.id});
+        res.status(200).json(listing)
+    }catch (err){
+        next(err)
     }
 }
