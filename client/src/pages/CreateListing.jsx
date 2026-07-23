@@ -55,8 +55,12 @@ const CreateListing = () => {
         });
     };
 
-
-
+    const handleRemoveImage = (index)=>{
+        setFormData({
+            ...formData,
+            imageUrls: formData.imageUrls.filter((_, i) => i !== index)
+        })
+    }
     return (
         <main className="p-3 max-w-4xl mx-auto">
             <h1 className="text-3xl font-semibold text-center my-7">Create a Listing</h1>
@@ -111,18 +115,18 @@ const CreateListing = () => {
                     </p>
                     <div className="flex gap-4">
                         <input onChange={(e)=>setFiles(e.target.files)} className="p-3 border border-gray-300 rounded w-full  " type='file' id='images' accept='image/*' multiple/>
-                        <button type='button' onClick={handleImageUpload} className="p-3 text-green-700 border border-green-700 rounded uppercase hover:shadow-lg disabled:opacity-95 ">Upload</button>
+                        <button type='button' disabled={uploading} onClick={handleImageUpload} className="p-3 text-green-700 border border-green-700 rounded uppercase hover:shadow-lg disabled:opacity-95 ">{uploading?"Uploading...":"Upload"}</button>
                     </div>
-                    <button className="p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80">Create Listing</button>
                     {
                         formData.imageUrls.length >0 && formData.imageUrls.map((url, index) =>
                             (
                                 <div className="" key={index}>
                                     <img className="w-20 h-20 object-cover rounded-lg" src={url} alt='listing image'/>
-                                    <button >Delete</button>
+                                    <button type='button' onClick={()=>handleRemoveImage(index)} className="p-3 text-red-700 rounded-lg uppercase hover:opacity-75" >Delete</button>
                                 </div>
                             ))
                     }
+                    <button className="p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80">Create Listing</button>
                 </div>
             </form>
         </main>
