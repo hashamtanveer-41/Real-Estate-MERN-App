@@ -139,7 +139,9 @@ const Profile = () => {
                             </Link>
                             <div className="flex flex-col items-center">
                                 <button className="text-red-700 uppercase">Delete</button>
+                                <Link to ={`/update-listing/${userListing._id}`}>
                                 <button className="text-green-700 uppercase">Edit</button>
+                                </Link>
                             </div>
                         </div>
                     ))
