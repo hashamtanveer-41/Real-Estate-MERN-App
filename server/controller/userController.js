@@ -35,7 +35,7 @@ export const deleteUser = async (req, res, next) => {
 }
 
 export const getUserlising= async (req, res, next) => {
-    if (req.user.id !== req.params.id) return next(errorHandler(401, "You can get only view your listings!"));
+    if (req.user.id !== req.params.id) return next(errorHandler(401, "You can only view your listings!"));
     try{
         const listing = await Listing.find({userRef: req.params.id});
         res.status(200).json(listing)
