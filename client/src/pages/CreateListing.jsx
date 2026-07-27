@@ -21,7 +21,6 @@ const CreateListing = () => {
         regularPrice: 50,
         discountPrice: 0
     });
-    console.log(formData)
     const [uploading, setUploading] = useState(false);
     const [error, setError] = useState(false)
     const [loading, setLoading] = useState()
@@ -123,7 +122,7 @@ const CreateListing = () => {
             if (data.success==='false'){
                 setError(data.message);
             }
-            navigate(`/listing/${data._ide}`)
+            navigate(`/listing/${data._id}`)
         }catch (err){
             setError(err.message);
             setLoading(false)
