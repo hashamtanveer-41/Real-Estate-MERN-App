@@ -1796,6 +1796,11 @@ strip-ansi@^6.0.0, strip-ansi@^6.0.1:
   dependencies:
     ansi-regex "^5.0.1"
 
+swiper@^14.0.6:
+  version "14.0.6"
+  resolved "https://registry.npmjs.org/swiper/-/swiper-14.0.6.tgz"
+  integrity sha512-ArptjmcZMBvpLCbvzSKuqvQpjjITCbZdymiGOrbZQffQ3ZSjgpvMByXX0WZBUt+FV4PPIumdYfZ9ZdBbFsdH6g==
+
 tailwindcss@^4.3.2, tailwindcss@4.3.2:
   version "4.3.2"
   resolved "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.3.2.tgz"
