@@ -10,17 +10,18 @@ const Header = () => {
     const handleSubmit = (e)=>{
         e.preventDefault();
         const urlParams = new URLSearchParams(window.location.search);
-        urlParams.set('search', searchTerm);
+        urlParams.set('searchTerm', searchTerm);
         const searchQuery = urlParams.toString();
         navigate(`/search?${searchQuery}`);
     }
     useEffect(() => {
         const urlSearchParams = new URLSearchParams(window.location.search);
-        const searchParam = urlSearchParams.get('search');
+        const searchParam = urlSearchParams.get('searchTerm');
+        console.log(searchParam);
         if (searchParam) {
             setSearchTerm(searchParam);
         }
-    }, [<location className="search"></location>]);
+    }, [location.search]);
     return (
         <header className="bg-slate-200 shadow-md">
             <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
