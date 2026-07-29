@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from 'react'
 import {FaSearch} from "react-icons/fa";
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
 
 const Header = () => {
     const {currentUser} = useSelector(state=>state.user)
     const [searchTerm, setSearchTerm] = useState('')
     const navigate = useNavigate();
+    const location = useLocation();
+
     const handleSubmit = (e)=>{
         e.preventDefault();
         const urlParams = new URLSearchParams(window.location.search);
