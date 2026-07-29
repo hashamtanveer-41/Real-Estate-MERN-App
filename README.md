@@ -5,6 +5,12 @@ A full-stack Real Estate application built with the MERN stack (MongoDB, Express
 - **server/** — the backend API (Express + MongoDB)
 - **client/** — the frontend (React + Vite)
 
+## 🌐 Live Demo
+
+**Visit the deployed application:** [https://real-estate-mern-app-46h5.onrender.com/](https://real-estate-mern-app-46h5.onrender.com/)
+
+Hosted on Render.
+
 ## Quick Start
 
 ### Backend (Server)
