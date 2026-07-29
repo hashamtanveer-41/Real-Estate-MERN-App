@@ -7,7 +7,7 @@ import authRoutes from "./routes/authRoute.js";
 import cookieParser from "cookie-parser";
 import listingRoutes from "./routes/listingRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
-import {path} from "express/lib/application.js";
+import path from 'path';
 dotenv.config()
 dns.setDefaultResultOrder('ipv4first');
 
