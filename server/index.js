@@ -7,6 +7,7 @@ import authRoutes from "./routes/authRoute.js";
 import cookieParser from "cookie-parser";
 import listingRoutes from "./routes/listingRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
+import {path} from "express/lib/application.js";
 dotenv.config()
 dns.setDefaultResultOrder('ipv4first');
 
@@ -23,10 +24,18 @@ mongoose.connect(process.env.MONGO_URL)
     console.log(err)
 });
 
+const _dirname = path.resolve();
+
 app.use("/api/user",userRoutes)
 app.use("/api/auth",authRoutes)
 app.use("/api/listing",listingRoutes)
 app.use("/api/upload",uploadRoutes)
+
+app.use(express.static(path.join(_dirname,"/client/dist")))
+
+app.get("*",(req,res)=>{
+    res.sendFile(path.join(_dirname,"client", "dist","index.html"))
+})
 
 app.use((err, req, res, next)=>{
     const statusCode = err.statusCode || 500;
