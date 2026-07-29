@@ -18,7 +18,6 @@ const Listing = () => {
         const fetchListing = async () => {
             try {
                 const id = params.id;
-                console.log(id)
                 const response = await fetch(`/api/listing/${id}`);
                 const data = await response.json();
                 if (data.success===false){

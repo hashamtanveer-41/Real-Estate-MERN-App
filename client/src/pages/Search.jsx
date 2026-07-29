@@ -16,7 +16,6 @@ const Search = () => {
     const location = useLocation();
     const [loading, setLoading] = useState(false)
     const [listings, setListings] = useState([])
-    console.log(sideBarData);
     useEffect(() => {
         const urlParams = new URLSearchParams(location.search);
         const searchTerm = urlParams.get('searchTerm') ;
@@ -47,7 +46,6 @@ const Search = () => {
                 const data = await response.json();
                 setListings(data);
                 setLoading(false);
-                console.log(data);
             } catch (error) {
                 console.error('Error fetching listings:', error);
                 setLoading(false);

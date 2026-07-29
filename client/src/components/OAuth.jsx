@@ -19,7 +19,6 @@ const OAuth = () => {
                 },
                 body: JSON.stringify({email: result.user.email, username: result.user.displayName, photo: result.user.photoURL}),
             });
-            console.log(res)
             const data =  await res.json();
             dispatch(signInSuccess(data));
             navigate("/");

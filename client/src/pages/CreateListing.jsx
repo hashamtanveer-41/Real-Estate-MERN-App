@@ -37,7 +37,6 @@ const CreateListing = () => {
 
             try {
                 const urls = await Promise.all(promises);
-                console.log("Uploaded URLs:", urls);
                 setFormData((prev) => ({
                     ...prev,
                     imageUrls: prev.imageUrls.concat(urls),

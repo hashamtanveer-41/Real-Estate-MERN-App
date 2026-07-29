@@ -57,7 +57,6 @@ const UpdateListing = () => {
 
             try {
                 const urls = await Promise.all(promises);
-                console.log("Uploaded URLs:", urls);
                 setFormData((prev) => ({
                     ...prev,
                     imageUrls: prev.imageUrls.concat(urls),
@@ -141,7 +140,6 @@ const UpdateListing = () => {
             if (data.success==='false'){
                 setError(data.message);
             }
-            console.log(data)
             navigate(`/listing/${data._id}`)
         }catch (err){
             setError(err.message);
