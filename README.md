@@ -1,162 +1,194 @@
-# Real-Estate-MERN-App
+# 🏡 HashamEstate – MERN Real Estate Platform
 
-A full-stack Real Estate application built with the MERN stack (MongoDB, Express, React, Node). This repository contains two main parts:
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![Node.js](https://img.shields.io/badge/Node.js-Backend-339933?logo=node.js)
+![Express](https://img.shields.io/badge/Express.js-Server-000000?logo=express)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-47A248?logo=mongodb)
+![JWT](https://img.shields.io/badge/JWT-Authentication-000000)
+![Redux Toolkit](https://img.shields.io/badge/Redux-Toolkit-764ABC?logo=redux)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-Styling-06B6D4?logo=tailwindcss)
+![Render](https://img.shields.io/badge/Deployment-Render-46E3B7?logo=render)
 
-- **server/** — the backend API (Express + MongoDB)
-- **client/** — the frontend (React + Vite)
+A modern full-stack real estate platform built with the **MERN Stack** that allows users to discover, search, and manage property listings through a clean and responsive interface.
 
-## 🌐 Live Demo
+---
 
-**Visit the deployed application:** [https://real-estate-mern-app-46h5.onrender.com/](https://real-estate-mern-app-46h5.onrender.com/)
+# Preview
 
-Hosted on Render.
+> <img width="1514" height="1039" alt="ChatGPT Image Jul 29, 2026, 10_28_42 PM" src="https://github.com/user-attachments/assets/48648967-7a44-4c51-9d38-5af6cce0bae5" />
 
-## Quick Start
 
-### Backend (Server)
-
-1. Navigate to the server folder:
-   ```bash
-   cd server
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Set up environment variables:
-   ```bash
-   cp .env.example .env
-   # Edit .env with your MongoDB URI, JWT secret, and other required values
-   ```
-
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-The server will run on `http://localhost:5000` (or your configured PORT).
-
-### Frontend (Client)
-
-1. Navigate to the client folder:
-   ```bash
-   cd client
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Set up environment variables:
-   ```bash
-   cp .env.example .env.local
-   # Configure REACT_APP_API_URL to point to your backend (e.g., http://localhost:5000/api)
-   ```
-
-4. Start the development server:
-   ```bash
-   npm start
-   ```
-
-The frontend will run on `http://localhost:3000`.
-
-## Environment Setup
-
-### Server Variables
-
-- `PORT` — server port (default: 5000)
-- `MONGO_URI` — MongoDB connection string
-- `JWT_SECRET` — secret for signing JWTs
-- `CLOUDINARY_CLOUD_NAME` — (optional) Cloudinary cloud name for image uploads
-- `CLOUDINARY_API_KEY` — (optional) Cloudinary API key
-- `CLOUDINARY_API_SECRET` — (optional) Cloudinary API secret
-
-### Client Variables
-
-- `REACT_APP_API_URL` — base URL for the backend API (e.g., http://localhost:5000/api)
-
-## Project Structure
-
-```
-Real-Estate-MERN-App/
-├── server/              # Backend (Node.js + Express + MongoDB)
-│   ├── src/
-│   ├── .env.example
-│   ├── package.json
-│   └── README.md       # Backend documentation
-├── client/             # Frontend (React + Vite)
-│   ├── src/
-│   ├── .env.example
-│   ├── package.json
-│   └── README.md       # Frontend documentation
-└── README.md           # This file
+```md
+![HashamEstate Preview](images/preview.png)
 ```
 
-## Available Scripts
+---
 
-### Server
+# 🚀 Live Demo
 
-- `npm run dev` — start with hot reloading (nodemon)
-- `npm start` — start production server
-- `npm test` — run tests (if configured)
-- `npm run lint` — run linter (if configured)
+### 🌐 Website
 
-### Client
+https://real-estate-mern-app-46h5.onrender.com/
 
-- `npm start` — development server
-- `npm run build` — production build
-- `npm test` — run tests (if configured)
+### 📂 GitHub Repository
+
+https://github.com/hashamtanveer-41/Real-Estate-MERN-App
+
+---
+
+# ✨ Features
+
+## Authentication
+
+- Secure JWT Authentication
+- User Registration & Login
+- Protected Routes
+- Persistent Sessions
+
+## Property Management
+
+- Create Property Listings
+- Edit Existing Listings
+- Delete Listings
+- Upload Property Images
+
+## Search & Discovery
+
+- Search Properties
+- Filter Listings
+- View Property Details
+- Responsive Property Cards
+
+## User Experience
+
+- Fully Responsive Design
+- Clean Modern UI
+- Fast Navigation
+- Mobile Friendly
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React
+- Redux Toolkit
+- React Router
+- Tailwind CSS
+- Vite
+
+## Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- bcrypt
 
 ## Deployment
 
-### Server
-
-Deploy on platforms like:
-- Heroku
-- Railway
 - Render
-- AWS EC2
 
-Ensure environment variables are set on your hosting platform.
+---
 
-### Client
+# 📁 Project Structure
 
-1. Build the project:
-   ```bash
-   npm run build
-   ```
+```
+Real-Estate-MERN-App
+│
+├── client/
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   └── redux/
+│
+├── api/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
+│   └── utils/
+│
+└── README.md
+```
 
-2. Deploy the `build/` folder to:
-   - Vercel
-   - Netlify
-   - GitHub Pages
-   - Any static hosting service
+# ⚙ Installation
 
-Or serve from the backend by copying the build folder to the server's public directory.
+Clone the repository
 
-## Contributing
+```bash
+git clone https://github.com/hashamtanveer-41/Real-Estate-MERN-App.git
+```
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/your-feature`)
-3. Commit changes (`git commit -m 'Add your feature'`)
-4. Push to the branch (`git push origin feature/your-feature`)
-5. Open a Pull Request
+Move inside the project
 
-## API Documentation
+```bash
+cd Real-Estate-MERN-App
+```
 
-For detailed API endpoints, request/response formats, and authentication details, see [server/README.md](./server/README.md).
+Install dependencies
 
-## Frontend Documentation
+Frontend
 
-For component structure, styling, and environment setup details, see [client/README.md](./client/README.md).
+```bash
+cd client
+npm install
+```
 
-## License
+Backend
 
-This project is licensed under the MIT License - see LICENSE file for details.
+```bash
+cd api
+npm install
+```
 
-## Support
+Run Backend
 
-For issues, questions, or suggestions, open an issue on GitHub or contact the maintainers.
+```bash
+npm run dev
+```
+
+Run Frontend
+
+```bash
+cd client
+npm run dev
+```
+
+---
+
+# 🔐 Environment Variables
+
+Create a `.env` file inside the backend.
+
+```env
+MONGO=
+JWT_SECRET=
+```
+
+Create a `.env` file inside the client if required.
+
+---
+
+# 🎯 Future Improvements
+
+- Google Authentication
+- Property Wishlist
+- Property Reviews
+- Saved Searches
+- Email Notifications
+- Maps Integration
+- Admin Dashboard
+
+---
+
+# 👨‍💻 Author
+
+**Hasham Tanveer**
+
+- LinkedIn https://www.linkedin.com/in/hashamtanveerokara/
+- GitHub https://github.com/hashamtanveer-41
+
+If you found this project helpful, consider giving it a ⭐.
