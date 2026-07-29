@@ -24,17 +24,18 @@ mongoose.connect(process.env.MONGO_URL)
     console.log(err)
 });
 
-const _dirname = path.resolve();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use("/api/user",userRoutes)
 app.use("/api/auth",authRoutes)
 app.use("/api/listing",listingRoutes)
 app.use("/api/upload",uploadRoutes)
 
-app.use(express.static(path.join(_dirname,"/client/dist")))
+app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
 
 app.get(/(.*)/,(req,res)=>{
-    res.sendFile(path.join(_dirname,"client", "dist","index.html"))
+    res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'));
 })
 
 app.use((err, req, res, next)=>{
