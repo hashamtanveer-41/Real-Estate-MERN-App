@@ -8,6 +8,7 @@ import cookieParser from "cookie-parser";
 import listingRoutes from "./routes/listingRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
 import path from 'path';
+import { fileURLToPath } from 'url';
 dotenv.config()
 dns.setDefaultResultOrder('ipv4first');
 
